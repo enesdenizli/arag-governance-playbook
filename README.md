@@ -81,6 +81,10 @@ This project operationalizes a baseline-vs-candidate decision protocol that is:
 
 ## Decision model (at a glance)
 
+<p align="center">
+  <img src="./assets/workflow-overview.svg" alt="ARAG governance workflow overview" width="100%" />
+</p>
+
 ```mermaid
 flowchart TD
     A[Define baseline + candidate] --> B[Run both profiles on same eval slice]
