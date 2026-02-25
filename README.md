@@ -1,11 +1,9 @@
 <div align="center">
 
 # ARAG Governance Playbook
-### Evidence-first model selection workflow for Agentic RAG systems
+### Generic, reusable governance scaffolding for Agentic RAG model selection
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Evaluation Artifacts](https://img.shields.io/badge/artifacts-versioned-blue)](./governance/evaluation-inputs/)
-[![Decision Status](https://img.shields.io/badge/decision-HOLD-orange)](./ARAG_CANDID_SELECTION_EVALUATION_REPORT.md)
 [![GitHub stars](https://img.shields.io/github/stars/enesdenizli/arag-governance-playbook?style=social)](https://github.com/enesdenizli/arag-governance-playbook/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/enesdenizli/arag-governance-playbook)](https://github.com/enesdenizli/arag-governance-playbook/issues)
 [![Last commit](https://img.shields.io/github/last-commit/enesdenizli/arag-governance-playbook)](https://github.com/enesdenizli/arag-governance-playbook/commits/main)
@@ -16,70 +14,67 @@
 
 > [!TIP]
 > ## Start here
-> - Read the canonical verdict: [`ARAG_CANDID_SELECTION_EVALUATION_REPORT.md`](./ARAG_CANDID_SELECTION_EVALUATION_REPORT.md)
-> - Browse run artifacts: [`governance/evaluation-inputs/run-20260221-212859-est/`](./governance/evaluation-inputs/run-20260221-212859-est/)
-> - Use this as a template for your own baseline-vs-candidate promotion workflow
+> 1. Read this page for motivation + concepts.
+> 2. Copy `governance/evaluation-inputs/` as your governance scaffold.
+> 3. See `example-repo/` for a concrete filled-out run.
 
-## Table of Contents
-- [Why this repository exists](#why-this-repository-exists)
-- [Quick context: what is RAG, and why does governance matter?](#quick-context-what-is-rag-and-why-does-governance-matter)
-- [What this workflow is designed to do](#what-this-workflow-is-designed-to-do)
-- [Decision model (at a glance)](#decision-model-at-a-glance)
-- [Repository outcome in this published run](#repository-outcome-in-this-published-run)
-- [Terminology cheat sheet](#terminology-cheat-sheet)
-- [Why this workflow is useful beyond this repo](#why-this-workflow-is-useful-beyond-this-repo)
-- [Comparison: ad-hoc eval vs governed eval](#comparison-ad-hoc-eval-vs-governed-eval)
-- [Artifact structure (visual map)](#artifact-structure-visual-map)
-- [What this repository is (and is not)](#what-this-repository-is-and-is-not)
-- [Practical adoption guide](#practical-adoption-guide)
-- [Citation](#citation)
+## Why this exists
 
-## Why this repository exists
+This repo is a response to a common LLM failure mode: teams promote a new model because one metric looks better (usually cost), then discover regressions in quality, latency, or reliability after release.
 
-Most LLM teams can run evaluations. Fewer can **defend a promotion decision** when quality, latency, and cost disagree.
+The playbook here makes promotions **evidence-first** and **gate-driven**:
+- baseline vs candidate must be compared on the same scope,
+- evidence must be admissible,
+- frozen non-regression gates determine outcome.
 
-This repository exists to solve that exact problem:
-
-- turn model selection into a **governed decision process**, not a vibe check,
-- require **admissible evidence** before deciding,
-- preserve a full **audit trail** from raw run outputs to final verdict.
-
-In short: this is a practical playbook for deciding whether a candidate model should replace a baseline in an Agentic RAG stack.
+No hand-wavy “it seems better.”
 
 ---
 
-## Quick context: what is RAG, and why does governance matter?
+## Inspiration and origin
 
-### What is RAG?
-**RAG (Retrieval-Augmented Generation)** is an LLM workflow where the model answers using retrieved external knowledge (documents/chunks/indexes), not only its internal weights.
+This work is directly inspired by the A-RAG concept and implementation direction from:
+- **A-RAG repository:** https://github.com/Ayanami0730/arag
+- **Paper:** *A-RAG: Scaling Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces* (arXiv:2602.03442)
 
-### What is Agentic RAG (A-RAG)?
-In agentic setups, the model performs iterative tool use (search, read, reason, re-query) to gather evidence before answering.
-
-### Why governance is needed
-In production, model upgrades are risky:
-- A candidate may be cheaper but slower.
-- A candidate may be faster but less accurate.
-- A candidate may look good on averages but fail on tail latency or sensitive subsets.
-
-Without governance, teams accidentally ship regressions.
-
-This playbook enforces deterministic gates so “better” means **better where it counts**, not just one metric.
+A-RAG focuses on agentic retrieval behavior (tool use, iterative retrieval, hierarchical interfaces).  
+This repository focuses on a complementary question: **how to govern model-selection decisions around those systems in production-facing workflows**.
 
 ---
 
-## What this workflow is designed to do
+## RAG and Agentic RAG (quick primer)
 
-This project operationalizes a baseline-vs-candidate decision protocol that is:
+| Term | Meaning |
+|---|---|
+| RAG | Retrieval-Augmented Generation: LLM answers grounded in retrieved external knowledge (chunks/docs/indexes). |
+| Agentic RAG | RAG where the model actively chooses retrieval actions iteratively (search → inspect → refine → answer). |
+| Baseline | Current production-safe model/profile. |
+| Candidate | New model/profile proposed for promotion. |
+| Gate | Deterministic pass/fail criteria for promotion decisions. |
 
-1. **Artifact-driven** — every claim maps to a stored artifact.
-2. **Deterministic** — frozen gate logic defines pass/fail outcomes.
-3. **Auditable** — decision chain is inspectable after the run.
-4. **Reproducibility-oriented** — manifests and structured folders reduce ambiguity.
+Why this matters: agentic systems are powerful but evaluation noise is real. Governance reduces accidental regressions.
 
 ---
 
-## Decision model (at a glance)
+## Why Qwen3-Embedding-0.6B and those datasets (in the example)
+
+In the included example run, embeddings and datasets followed the upstream A-RAG ecosystem for comparability and practicality:
+
+### Why **Qwen3-Embedding-0.6B**
+- Strong quality/efficiency tradeoff for retrieval indexing.
+- Widely available and reproducible in open workflows.
+- Aligns with the upstream A-RAG setup, reducing confounders when comparing outcomes.
+
+### Why those benchmark datasets
+- Multi-hop and compositional reasoning pressure (not just single-hop lookup).
+- Community-recognized RAG evaluation datasets, easier peer comparison.
+- Good fit for testing retrieval + reasoning interaction under constrained budgets.
+
+This repo does **not** hardcode these choices as mandatory. They are example defaults, not doctrine.
+
+---
+
+## Governance workflow (template)
 
 <p align="center">
   <img src="./assets/workflow-overview.svg" alt="ARAG governance workflow overview" width="100%" />
@@ -87,124 +82,66 @@ This project operationalizes a baseline-vs-candidate decision protocol that is:
 
 ```mermaid
 flowchart TD
-    A[Define baseline + candidate] --> B[Run both profiles on same eval slice]
-    B --> C[Collect run artifacts\nmetrics / latency / logs / manifests]
-    C --> D[Validate evidence admissibility]
-    D --> E{Frozen non-regression gates}
+    A[Define baseline + candidate + frozen criteria] --> B[Run both on identical scope]
+    B --> C[Collect artifacts and manifests]
+    C --> D[Admissibility checks]
+    D --> E{Gate evaluation}
     E -->|Pass| F[SELECT_CANDIDATE]
-    E -->|Fail| G[SELECT_BASELINE / HOLD]
-    F --> H[Publish decision report + trace]
-    G --> H
+    E -->|Fail| G[HOLD / SELECT_BASELINE]
 ```
 
 ---
 
-## Repository outcome in this published run
+## Example section (reference run)
 
-- **Decision:** `HOLD`
-- **Selected profile:** `gpt-5-mini-control` (baseline retained)
-- **Candidate evaluated:** `openai-codex/gpt-5.3-codex`
-- **Reason:** candidate improved cost but regressed on quality and latency under frozen non-regression gates.
+Run-specific outputs were intentionally moved under:
+- `example-repo/`
 
-See canonical report: [`ARAG_CANDID_SELECTION_EVALUATION_REPORT.md`](./ARAG_CANDID_SELECTION_EVALUATION_REPORT.md)
+That folder is a concrete demonstration of how the template looks when fully populated.
 
-### In 3 minutes, understand this repo
-1. Open the final verdict report.
-2. Inspect `03_governance/comparison/decision-input.json` and `verdict.json`.
-3. Cross-check claims against `02_runs/baseline/` and `02_runs/candidate/` artifacts.
+### Example outcome snapshot
+| Item | Example Value |
+|---|---|
+| Decision | HOLD |
+| Selected profile | baseline retained |
+| Primary reason | candidate cost improved, but quality + latency regressed |
 
----
+### Example benchmark-style comparison (format inspired by A-RAG repo)
 
-## Terminology cheat sheet
+| Method/Profile | LLM-Acc | Cont-Acc | p50 Latency (ms) | p95 Latency (ms) | Avg Cost / Query |
+|---|---:|---:|---:|---:|---:|
+| Baseline (`gpt-5-mini-control`) | 0.70 | 0.90 | 53,681.77 | 66,389.94 | $0.008766 |
+| Candidate (`openai-codex/gpt-5.3-codex`) | 0.60 | 0.80 | 55,198.19 | 77,591.26 | $0.007227 |
 
-| Term | Meaning in this repo | Why it matters |
-|---|---|---|
-| Baseline | Current production-safe model/profile | Reference point for non-regression |
-| Candidate | Proposed replacement model/profile | Must beat or match baseline gates |
-| Gate | Explicit pass/fail rule set | Prevents ad-hoc decision drift |
-| Non-regression | “Do not get worse” on critical metrics | Protects reliability and user trust |
-| Admissible evidence | Artifacts that meet completeness/authority criteria | Blocks decisions from partial data |
-| HOLD | Do not promote candidate this run | Safe default under failure/uncertainty |
-| Traceability | Path from claim → artifact → verdict | Enables audits and reproducibility |
+> Full example artifacts + reports: `example-repo/`
 
 ---
 
-## Why this workflow is useful beyond this repo
-
-### Typical failure mode (without governance)
-- Teams compare one metric snapshot.
-- Candidate looks cheaper.
-- Candidate is promoted.
-- Real users later observe slower responses or worse answer quality.
-
-### Controlled path (with governance)
-- Same eval scope for both profiles.
-- Frozen gates for quality + latency (+ stability checks).
-- Promotion blocked unless required conditions are satisfied.
-
-This is the difference between **experimental confidence** and **operational confidence**.
-
----
-
-## Comparison: ad-hoc eval vs governed eval
-
-| Dimension | Ad-hoc Evaluation | Governed Workflow (this repo) |
-|---|---|---|
-| Decision basis | Human interpretation | Frozen gate policy |
-| Evidence quality checks | Inconsistent | Explicit admissibility checks |
-| Auditability | Low | High (artifact chain) |
-| Repeatability | Low/medium | Medium/high |
-| Regression protection | Weak | Strong on defined gates |
-| Team handoff clarity | Low | High (structured run package) |
-
----
-
-## Artifact structure (visual map)
+## Repository layout (generic/template-first)
 
 ```text
-governance/evaluation-inputs/run-20260221-212859-est/
-├── 01_manifests/      # run + dataset + artifact manifests
-├── 02_runs/           # baseline/candidate run outputs
-├── 03_governance/     # comparison, gate, verdict materials
-└── README.md          # run-local summary
+.
+├── governance/evaluation-inputs/        # reusable governance scaffold
+├── schemas/                             # contracts/schemas for artifacts
+├── runbooks/                            # operational guidance
+├── example-repo/                        # concrete, run-specific example material
+└── README.md
 ```
 
-Top-level docs:
-- `ARAG_CANDID_SELECTION_EVALUATION_REPORT.md` — canonical decision report
-- `ARAG_CANDID_SELECTION_EVALUATION_REPORT_GENERIC.md` — sanitized external template
-- `CITATION.cff` — machine-readable citation metadata
-
 ---
 
-## What this repository is (and is not)
+## Design goals
 
-### This repo is
-- a **public, minimal, governance-focused snapshot**,
-- suitable for researchers/practitioners studying model selection discipline,
-- intentionally scoped to publish decision logic and artifacts.
-
-### This repo is not
-- a full training pipeline,
-- a one-click benchmark framework,
-- a claim that one model is universally best.
-
----
-
-## Practical adoption guide
-
-If you want to apply this approach in your own LLM/RAG stack:
-
-1. Define baseline and candidate profiles.
-2. Freeze your gate criteria *before* running final comparisons.
-3. Enforce admissibility checks before verdict generation.
-4. Version all critical artifacts and manifests.
-5. Publish a concise canonical report with explicit decision rationale.
+- **Generic:** not tied to one model provider or one dataset.
+- **Auditable:** every decision maps to artifacts.
+- **Portable:** easy to fork and adapt.
+- **Minimal:** template-first root, examples isolated.
 
 ---
 
 ## Citation
 
-If this repository or workflow informs your work, please cite the upstream A-RAG paper:
+If this repo or workflow helps your work, cite A-RAG:
 
 ```bibtex
 @article{du2026arag,
@@ -215,4 +152,4 @@ If this repository or workflow informs your work, please cite the upstream A-RAG
 }
 ```
 
-See also: [`CITATION.cff`](./CITATION.cff)
+Machine-readable metadata: [`CITATION.cff`](./CITATION.cff)
