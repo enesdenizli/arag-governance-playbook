@@ -1,0 +1,33 @@
+{
+  "p50_latency_ms": 12000.0,
+  "p95_latency_ms": 30200.0,
+  "avg_cost_per_query": 0.0,
+  "envelope_compliant": true,
+  "measurement_status": "derived_from_batch_progress_log_completion_intervals",
+  "latency_evidence": {
+    "source_log": "governance/evaluation-inputs/run-20260221-212859-est/candidate/logs/candidate-batch-rerun-20260222-043639.log",
+    "cumulative_completion_seconds": [
+      26,
+      38,
+      46,
+      50,
+      52,
+      59,
+      92,
+      106,
+      127
+    ],
+    "completion_interval_seconds": [
+      26,
+      12,
+      8,
+      4,
+      2,
+      7,
+      33,
+      14,
+      21
+    ],
+    "quantile_method": "linear_interpolation_on_completion_intervals"
+  }
+}

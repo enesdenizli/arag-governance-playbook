@@ -1,0 +1,9 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "status": "COMPLETED",
+  "gate_decision": "HOLD",
+  "recommended_outcome": "hold",
+  "reason": "Authoritative dual-lane per-query latency telemetry is complete; HOLD remains because candidate regresses on quality and latency despite lower cost.",
+  "timestamp_utc": "2026-02-22T10:48:22Z",
+  "selected_profile": "gpt-5-mini-control"
+}

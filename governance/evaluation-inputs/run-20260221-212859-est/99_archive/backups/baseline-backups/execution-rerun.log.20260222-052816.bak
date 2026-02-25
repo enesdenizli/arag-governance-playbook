@@ -1,0 +1,8 @@
+Loading embedding model: /mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B
+Embedding model loaded successfully!
+Total questions: 10
+Completed: 0
+Pending: 10
+Starting with 4 workers...
+
+Results saved to: governance/evaluation-inputs/run-20260221-212859-est/baseline/predictions.jsonl

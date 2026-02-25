@@ -1,0 +1,15 @@
+{
+    "total_samples": 10,
+    "answered_samples": 10,
+    "failed_samples": 0,
+    "answer_rate": 1.0,
+    "llm_accuracy": 0.7,
+    "contain_accuracy": 0.9,
+    "correct_by_llm": 7,
+    "correct_by_contain": 9,
+    "total_cost": 0.071246,
+    "avg_cost_per_question": 0.007125,
+    "total_retrieved_tokens": 23658,
+    "avg_retrieved_tokens": 2365.8,
+    "avg_loops": 9.9
+}

@@ -1,0 +1,23 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "lane": "candidate",
+  "attempted_at_utc": "2026-02-22T09:45:00Z",
+  "authority_command": "python -m arag.eval.step1 --run-id run-20260221-212859-est --profile-id openai-codex/gpt-5.3-codex --model openai-codex/gpt-5.3-codex --dataset MuSiQue --split dev --seed 42 --limit 10 --device cpu --embedding-model-path /mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B --api-mode real --out-root governance/evaluation-inputs/run-20260221-212859-est/candidate",
+  "shim_attempts": [
+    "python3 -m arag.eval.step1 --run-id run-20260221-212859-est --profile-id openai-codex/gpt-5.3-codex --model openai-codex/gpt-5.3-codex --dataset MuSiQue --split dev --seed 42 --limit 10 --device cpu --embedding-model-path /mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B --api-mode real --out-root governance/evaluation-inputs/run-20260221-212859-est/candidate",
+    "/home/enes/.openclaw/workspace/agentic-ecosystem/.venv-arag/bin/python -m arag.eval.step1 --run-id run-20260221-212859-est --profile-id openai-codex/gpt-5.3-codex --model openai-codex/gpt-5.3-codex --dataset MuSiQue --split dev --seed 42 --limit 10 --device cpu --embedding-model-path /mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B --api-mode real --out-root governance/evaluation-inputs/run-20260221-212859-est/candidate"
+  ],
+  "blocking_error": "ModuleNotFoundError: No module named 'arag.eval'",
+  "coverage_rate": 0.6,
+  "missing_citation_rate": 0.4,
+  "invalid_citation_rate": 0.1,
+  "execution_status": "authority_command_blocked_artifact_reconciled_with_successful_rerun",
+  "artifact_outcome_from_predictions_eval_summary": {
+    "total_samples": 10,
+    "answered_samples": 10,
+    "failed_samples": 0,
+    "answer_rate": 1.0
+  },
+  "notes": "Citation/provenance rates computed from current candidate/predictions.jsonl (answered samples only) using chunk-id mentions in pred_answer cross-checked against chunks_read_ids. Runtime outcome reconciliation uses successful rerun evidence from candidate/logs/candidate-eval-rerun-20260222-043639.log and candidate/backups/predictions_eval_summary.json.20260222-043639.bak.",
+  "outcome_note": "Authority command path remains blocked, but lane outcomes are supported by successful rerun artifacts and reconciled as run-local evidence."
+}

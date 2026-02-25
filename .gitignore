@@ -1,0 +1,23 @@
+# Secrets
+.env*
+!.env*.example
+
+# Local/runtime
+.venv*/
+node_modules/
+arag-working/
+report-materials/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Windows ADS artifacts
+*:Zone.Identifier
+
+# Logs/temp
+*.log
+tmp/
+.temp/

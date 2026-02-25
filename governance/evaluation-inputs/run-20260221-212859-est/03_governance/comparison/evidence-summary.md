@@ -1,0 +1,21 @@
+# Evidence Summary
+
+- Fresh dual-lane evidence used:
+  - `baseline/backups/predictions_eval_summary.json.20260222-052816.bak`
+  - `candidate/backups/predictions_eval_summary.json.20260222-052816.bak`
+  - `baseline/backups/latency-cost.json.20260222-052816.bak`
+  - `candidate/backups/latency-cost.json.20260222-052816.bak`
+  - `baseline/backups/provenance-summary.json.20260222-052816.bak`
+  - `candidate/backups/provenance-summary.json.20260222-052816.bak`
+- Comparison artifacts regenerated from this evidence:
+  - `comparison/decision-input.json`
+  - `comparison/verdict.json`
+  - `comparison/table.md`
+  - `comparison/comparison-summary.md`
+  - `comparison/blockers.md`
+  - `comparison/summary.md`
+- Adjudication posture is `HOLD` with complete evidence: latency admissibility blocker is closed, but candidate regresses on quality and latency.
+- Authoritative latency evidence added:
+  - `comparison/gate/latency-rerun/baseline-workers1/predictions.jsonl`
+  - `comparison/gate/latency-rerun/candidate-workers1/predictions.jsonl`
+  - `comparison/gate/latency-rerun/per-query-latency-telemetry.json`

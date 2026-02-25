@@ -1,0 +1,35 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "generated_at_utc": "2026-02-22T09:47:30Z",
+  "source_artifacts": [
+    "baseline/provenance-summary.json",
+    "candidate/provenance-summary.json",
+    "baseline/guardrail-compliance.json",
+    "candidate/guardrail-compliance.json"
+  ],
+  "traceability": {
+    "trace_id": "trace::run-20260221-212859-est::a44de6b2216b",
+    "parent_trace_id": "source_commit::a44de6b2216b",
+    "status": "READY_FOR_REVIEW"
+  },
+  "baseline": {
+    "coverage_rate": 0.7,
+    "missing_citation_rate": 0.3,
+    "invalid_citation_rate": 0.1,
+    "execution_status": "authority_command_blocked_artifact_reconciled_with_successful_rerun"
+  },
+  "candidate": {
+    "coverage_rate": 0.6,
+    "missing_citation_rate": 0.4,
+    "invalid_citation_rate": 0.1,
+    "execution_status": "authority_command_blocked_artifact_reconciled_with_successful_rerun"
+  },
+  "compliance_outcome": "HOLD",
+  "acceptance_criteria": {
+    "artifact_exists": true,
+    "uses_run_local_sources_only": true,
+    "contains_required_fields": true,
+    "deterministic_pass_condition": "both lanes provide runtime provenance evidence with acceptable missing/invalid citation rates and complete traceability fields"
+  },
+  "notes": "This summary is checklist-complete and reconciles blocked authority-command attempts with successful rerun evidence available in lane-local logs/backups. HOLD remains due to missing latency quantiles and harness-parity constraints, not due to missing provenance artifact fields. Traceability mapping is deterministic from run-manifest.json: trace_id=trace::{run_id}::{source_commit[0:12]}, parent_trace_id=source_commit::{source_commit[0:12]}."
+}

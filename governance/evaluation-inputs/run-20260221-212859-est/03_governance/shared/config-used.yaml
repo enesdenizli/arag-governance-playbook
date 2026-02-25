@@ -1,0 +1,22 @@
+run_id: run-20260221-212859-est
+task: musique-step-1-prep
+compute:
+  device: cpu
+  threads: 4
+embedding:
+  profile_id: local_qwen3_0_6b
+  model_path: /mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B
+index:
+  builder: sentence-transformers
+  metric: cosine
+  normalize_embeddings: true
+dataset:
+  source: huggingface
+  dataset_id: dgslibisey/MuSiQue
+  config: default
+  split: validation
+  limit: 10
+outputs:
+  work_dir: /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working
+  index_dir: /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/indexes/musique-step1-limit10
+  shared_dir: /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/shared

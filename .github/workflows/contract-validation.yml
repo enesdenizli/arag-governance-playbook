@@ -1,0 +1,29 @@
+name: Contract Validation
+
+on:
+  push:
+    paths:
+      - 'schemas/json/**'
+      - 'tests/fixtures/**'
+      - 'scripts/validate-contracts.mjs'
+      - 'package.json'
+      - '.github/workflows/contract-validation.yml'
+  pull_request:
+    paths:
+      - 'schemas/json/**'
+      - 'tests/fixtures/**'
+      - 'scripts/validate-contracts.mjs'
+      - 'package.json'
+      - '.github/workflows/contract-validation.yml'
+
+jobs:
+  validate-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run validate:contracts

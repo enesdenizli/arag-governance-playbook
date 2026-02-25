@@ -1,0 +1,98 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "generated_at_utc": "2026-02-22T10:48:22Z",
+  "source_files": [
+    "comparison/gate/latency-rerun/baseline-workers1/predictions.jsonl",
+    "comparison/gate/latency-rerun/candidate-workers1/predictions.jsonl"
+  ],
+  "method": "direct per-query latency_ms fields from predictions.jsonl (workers=1 reruns)",
+  "baseline": {
+    "count": 10,
+    "mean_latency_ms": 43947.59,
+    "p50_latency_ms": 53681.77,
+    "p95_latency_ms": 66389.938
+  },
+  "candidate": {
+    "count": 10,
+    "mean_latency_ms": 47445.181,
+    "p50_latency_ms": 55198.185,
+    "p95_latency_ms": 77591.256
+  },
+  "comparative": {
+    "mean_delta_ms_candidate_minus_baseline": 3497.591,
+    "p50_delta_ms_candidate_minus_baseline": 1516.415,
+    "p95_delta_ms_candidate_minus_baseline": 11201.318
+  },
+  "per_query": [
+    {
+      "qid": "2hop__207476_625987",
+      "baseline_latency_ms": 65755.946,
+      "candidate_latency_ms": 57131.182,
+      "delta_ms_candidate_minus_baseline": -8624.764,
+      "delta_pct_candidate_minus_baseline": -13.12
+    },
+    {
+      "qid": "2hop__252311_366220",
+      "baseline_latency_ms": 53681.77,
+      "candidate_latency_ms": 45858.526,
+      "delta_ms_candidate_minus_baseline": -7823.244,
+      "delta_pct_candidate_minus_baseline": -14.57
+    },
+    {
+      "qid": "2hop__259228_793698",
+      "baseline_latency_ms": 66389.938,
+      "candidate_latency_ms": 56839.756,
+      "delta_ms_candidate_minus_baseline": -9550.182,
+      "delta_pct_candidate_minus_baseline": -14.38
+    },
+    {
+      "qid": "2hop__354635_174222",
+      "baseline_latency_ms": 60575.863,
+      "candidate_latency_ms": 77591.256,
+      "delta_ms_candidate_minus_baseline": 17015.393,
+      "delta_pct_candidate_minus_baseline": 28.09
+    },
+    {
+      "qid": "2hop__390947_232243",
+      "baseline_latency_ms": 8432.403,
+      "candidate_latency_ms": 12830.892,
+      "delta_ms_candidate_minus_baseline": 4398.489,
+      "delta_pct_candidate_minus_baseline": 52.16
+    },
+    {
+      "qid": "2hop__460946_294723",
+      "baseline_latency_ms": 63558.729,
+      "candidate_latency_ms": 55198.185,
+      "delta_ms_candidate_minus_baseline": -8360.544,
+      "delta_pct_candidate_minus_baseline": -13.15
+    },
+    {
+      "qid": "2hop__481349_302087",
+      "baseline_latency_ms": 11351.656,
+      "candidate_latency_ms": 14240.103,
+      "delta_ms_candidate_minus_baseline": 2888.447,
+      "delta_pct_candidate_minus_baseline": 25.45
+    },
+    {
+      "qid": "2hop__635187_861533",
+      "baseline_latency_ms": 37760.455,
+      "candidate_latency_ms": 67211.561,
+      "delta_ms_candidate_minus_baseline": 29451.106,
+      "delta_pct_candidate_minus_baseline": 77.99
+    },
+    {
+      "qid": "2hop__697790_864352",
+      "baseline_latency_ms": 11713.247,
+      "candidate_latency_ms": 27513.208,
+      "delta_ms_candidate_minus_baseline": 15799.961,
+      "delta_pct_candidate_minus_baseline": 134.89
+    },
+    {
+      "qid": "2hop__701895_752697",
+      "baseline_latency_ms": 60255.897,
+      "candidate_latency_ms": 60037.139,
+      "delta_ms_candidate_minus_baseline": -218.758,
+      "delta_pct_candidate_minus_baseline": -0.36
+    }
+  ]
+}

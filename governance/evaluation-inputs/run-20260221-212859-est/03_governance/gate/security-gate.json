@@ -1,0 +1,20 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "checked_at": "2026-02-22T07:12:22Z",
+  "critical_findings_summary": {
+    "critical_findings_present": false,
+    "critical_findings_count": 0,
+    "critical_findings_ids": []
+  },
+  "output": {
+    "proceed": false,
+    "hold": true,
+    "fail": false,
+    "unknown": false,
+    "decision": "HOLD",
+    "reason": "No security hard-fail; hold is performance-evidence related."
+  },
+  "blockers": [
+    "Need broader eval evidence for proceed/fail decision."
+  ]
+}

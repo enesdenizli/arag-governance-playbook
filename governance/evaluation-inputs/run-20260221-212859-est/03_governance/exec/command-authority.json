@@ -1,0 +1,47 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "status": "LOCKED_APPROVED",
+  "command_authority_status": "locked",
+  "approved_at": "2026-02-22T05:44:00Z",
+  "approval_source": "parent-a-approved-decisions",
+  "execution_scope": "step-1-limited",
+  "api_execution_mode": "real",
+  "device": "cpu",
+  "dataset": {
+    "dataset_id": "MuSiQue",
+    "split_id": "dev",
+    "deterministic_seed": 42,
+    "sample_limit": 10
+  },
+  "embedding": {
+    "model_path": "/mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B"
+  },
+  "profiles": {
+    "baseline_profile_id": "gpt-5-mini-control",
+    "candidate_profile_id": "openai-codex/gpt-5.3-codex"
+  },
+  "baseline_eval_cmd": "/home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/exec/run-with-env.sh /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/.venv/bin/python /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/arag-src/scripts/batch_runner.py --config /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/runtime/run-20260221-212859-est/config-baseline.yaml --questions /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/runtime/run-20260221-212859-est/questions.json --output /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/baseline --limit 10 --workers 4",
+  "candidate_eval_cmd": "/home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/exec/run-with-env.sh /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/.venv/bin/python /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/arag-src/scripts/batch_runner.py --config /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/runtime/run-20260221-212859-est/config-candidate.yaml --questions /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/runtime/run-20260221-212859-est/questions.json --output /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/candidate --limit 10 --workers 4",
+  "comparison_cmd": "/home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/exec/run-with-env.sh /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/.venv/bin/python /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/arag-src/scripts/eval.py --predictions /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/baseline/predictions.jsonl --workers 4 --output /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/baseline && /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/exec/run-with-env.sh /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/.venv/bin/python /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/arag-src/scripts/eval.py --predictions /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/candidate/predictions.jsonl --workers 4 --output /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/candidate",
+  "reconciliation_note": {
+    "old_invalid_entrypoints": [
+      "python -m arag.eval.step1",
+      "python -m arag.eval.compare"
+    ],
+    "new_runnable_entrypoints": [
+      "python scripts/batch_runner.py",
+      "python scripts/eval.py"
+    ]
+  },
+  "source_paths": [
+    "arag-working/arag-src/scripts/batch_runner.py",
+    "arag-working/arag-src/scripts/eval.py",
+    "arag-working/arag-src/README.md",
+    "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json",
+    "governance/evaluation-inputs/run-20260221-212859-est/exec/baseline-command-packet.md",
+    "governance/evaluation-inputs/run-20260221-212859-est/exec/candidate-command-packet.md",
+    "governance/evaluation-inputs/run-20260221-212859-est/run-manifest.json",
+    "governance/evaluation-inputs/run-20260221-212859-est/dataset-manifest.json",
+    "governance/evaluation-inputs/run-20260221-212859-est/exec/run-with-env.sh"
+  ]
+}

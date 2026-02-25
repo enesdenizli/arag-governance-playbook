@@ -1,0 +1,18 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "checked_at": "2026-02-22T09:47:30Z",
+  "checks": {
+    "schema_validation": "pass",
+    "fixtures_pass": "pass",
+    "compatibility_policy_reviewed": "pass",
+    "deprecation_policy_reviewed": "pass",
+    "tooling_profile_compliance_reviewed": "pass"
+  },
+  "gate": {
+    "status": "hold",
+    "blockers": [
+      "Checklist-completeness artifacts are present; traceability fields are populated and provenance/citation summaries are reconciled with successful rerun evidence.",
+      "Latency evidence remains non-admissible: baseline has no p50/p95 telemetry, and candidate p50/p95 are proxy values derived from batch progress completion intervals rather than authoritative per-query E2E telemetry."
+    ]
+  }
+}

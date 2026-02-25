@@ -1,0 +1,41 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "created_at_utc": "2026-02-22T06:06:32.701351+00:00",
+  "code": {
+    "working_dir": "/home/enes/.openclaw/workspace/agentic-ecosystem/arag-working",
+    "index_builder_script": "/home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/build_musique_index.py"
+  },
+  "dataset_references": {
+    "provider": "huggingface-datasets-server",
+    "dataset_id": "dgslibisey/MuSiQue",
+    "config": "default",
+    "split": "validation",
+    "rows_api_template": "https://datasets-server.huggingface.co/rows?dataset=dgslibisey%2FMuSiQue&config=default&split=validation&offset=0&length=10"
+  },
+  "embedding": {
+    "model_path": "/mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B",
+    "device": "cpu",
+    "embedding_dim": 1024,
+    "normalize": true
+  },
+  "index_outputs": {
+    "index_dir": "/home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/indexes/musique-step1-limit10",
+    "embeddings_npy": "embeddings.npy",
+    "documents_jsonl": "documents.jsonl",
+    "rows_fetched": 10,
+    "documents_indexed": 200,
+    "sha256": {
+      "embeddings.npy": "38bb0466629d761365f7a85e10a0b61979496a0e54b7e33cddd545afc02b38fc",
+      "documents.jsonl": "0838c5131f0b4d34c6d7b7acf7e0f0948390e1d431957452c0f5198cfce2be93"
+    }
+  },
+  "source_pin": {
+    "source_repo": "https://github.com/Ayanami0730/arag",
+    "source_ref_type": "commit",
+    "source_commit": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
+    "source_commit_url": "https://github.com/Ayanami0730/arag/commit/a44de6b2216bf6791979c4b6ac4ae106212fa1a6"
+  },
+  "dataset_manifest_ref": "governance/evaluation-inputs/run-20260221-212859-est/dataset-manifest.json",
+  "pinning_status": "resolved",
+  "pinning_resolved_at_utc": "2026-02-22T06:36:53Z"
+}

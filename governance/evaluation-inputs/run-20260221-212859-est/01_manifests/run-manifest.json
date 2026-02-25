@@ -1,0 +1,66 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "created_at": "2026-02-22T02:28:59Z",
+  "trigger": "runbook-rag-eval-gate",
+  "baseline_profile_id": "gpt-5-mini-control",
+  "candidate_profile_id": "openai-codex/gpt-5.3-codex",
+  "status": "in_progress",
+  "command_authority_status": "locked",
+  "status_progression": [
+    "blocked",
+    "authority_locked",
+    "in_progress"
+  ],
+  "execution_scope": "step-1-limited",
+  "pinned_inputs": {
+    "baseline_profile_id": {
+      "value": "gpt-5-mini-control",
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    },
+    "candidate_profile_id": {
+      "value": "openai-codex/gpt-5.3-codex",
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    },
+    "dataset_id": {
+      "value": "MuSiQue",
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/dataset-manifest.json"
+    },
+    "split_id": {
+      "value": "dev",
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/dataset-manifest.json"
+    },
+    "deterministic_seed": {
+      "value": 42,
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/dataset-manifest.json"
+    },
+    "sample_limit": {
+      "value": 10,
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    },
+    "device": {
+      "value": "cpu",
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    },
+    "embedding_model_path": {
+      "value": "/mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B",
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    },
+    "api_execution_mode": {
+      "value": "real",
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    }
+  },
+  "provenance_links": {
+    "command_authority": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json",
+    "command_authority_report": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority-report.md",
+    "manifest_reconciliation": "governance/evaluation-inputs/run-20260221-212859-est/exec/manifest-contract-reconciliation.md",
+    "runbook": "runbooks/runbook-rag-eval-gate.md",
+    "source_pin": "governance/evaluation-inputs/run-20260221-212859-est/run-manifest.json#source_pin"
+  },
+  "source_pin": {
+    "source_repo": "https://github.com/Ayanami0730/arag",
+    "source_ref_type": "commit",
+    "source_commit": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6",
+    "source_commit_url": "https://github.com/Ayanami0730/arag/commit/a44de6b2216bf6791979c4b6ac4ae106212fa1a6"
+  }
+}

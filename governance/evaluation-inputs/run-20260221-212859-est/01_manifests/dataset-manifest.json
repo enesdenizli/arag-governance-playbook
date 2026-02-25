@@ -1,0 +1,55 @@
+{
+  "dataset_id": "MuSiQue",
+  "split_id": "dev",
+  "sample_count": 10,
+  "frozen_at": "2026-02-22T05:44:00Z",
+  "notes": "Pinned by approved Parent A authority contract lock for limited step-1 execution.",
+  "deterministic_seed": 42,
+  "device": "cpu",
+  "embedding_model_path": "/mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B",
+  "api_execution_mode": "real",
+  "status": "authority_locked",
+  "status_progression": [
+    "unknown",
+    "authority_locked"
+  ],
+  "pinned_inputs": {
+    "dataset_id": {
+      "value": "MuSiQue",
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    },
+    "split_id": {
+      "value": "dev",
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    },
+    "deterministic_seed": {
+      "value": 42,
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    },
+    "sample_count": {
+      "value": 10,
+      "provenance": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority.json"
+    }
+  },
+  "provenance_links": {
+    "baseline_blockers": "governance/evaluation-inputs/run-20260221-212859-est/baseline/blockers.md",
+    "candidate_blockers": "governance/evaluation-inputs/run-20260221-212859-est/candidate/blockers.md",
+    "command_authority_report": "governance/evaluation-inputs/run-20260221-212859-est/exec/command-authority-report.md",
+    "source_pin": "governance/evaluation-inputs/run-20260221-212859-est/run-manifest.json#source_pin"
+  },
+  "dataset_source": {
+    "provider": "huggingface-datasets-server",
+    "dataset_id": "dgslibisey/MuSiQue",
+    "config": "default",
+    "split": "validation",
+    "rows_api_template": "https://datasets-server.huggingface.co/rows?dataset=dgslibisey%2FMuSiQue&config=default&split=validation&offset=0&length=10"
+  },
+  "integrity_policy": "sha256_required",
+  "dataset_integrity": {
+    "index_manifest_path": "governance/evaluation-inputs/run-20260221-212859-est/shared/data-index-manifest.json",
+    "required_hashes": [
+      "embeddings.npy",
+      "documents.jsonl"
+    ]
+  }
+}

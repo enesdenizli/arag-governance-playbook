@@ -1,0 +1,6 @@
+{
+  "coverage_rate": 0.8,
+  "missing_citation_rate": 0.2,
+  "invalid_citation_rate": 0.0,
+  "notes": "Canonicalized from latest predictions_eval_summary.json for final-selection rerun cycle."
+}

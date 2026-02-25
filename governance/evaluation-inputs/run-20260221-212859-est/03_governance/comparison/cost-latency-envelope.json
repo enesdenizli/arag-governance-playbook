@@ -1,0 +1,52 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "artifact_type": "cost_latency_envelope",
+  "artifact_status": "latency_present_authoritative_dual_lane",
+  "generated_at_utc": "2026-02-22T10:48:22Z",
+  "evidence_sources": [
+    "comparison/gate/latency-rerun/baseline-workers1/predictions.jsonl",
+    "comparison/gate/latency-rerun/candidate-workers1/predictions.jsonl",
+    "comparison/gate/latency-rerun/per-query-latency-telemetry.json",
+    "baseline/backups/predictions_eval_summary.json.20260222-052816.bak",
+    "candidate/backups/predictions_eval_summary.json.20260222-052816.bak"
+  ],
+  "methodology": {
+    "latency_basis": "per-query latency_ms emitted by batch_runner predictions.jsonl",
+    "quantile_method": "nearest_rank (as emitted in latency_summary.json)",
+    "units": "milliseconds",
+    "baseline_caveat": "none"
+  },
+  "baseline": {
+    "answered_samples": 10,
+    "avg_cost_per_query_usd": 0.008766,
+    "total_cost_usd": 0.087665,
+    "latency_sample_size": 10,
+    "latency_p50_ms": 53681.77,
+    "latency_p95_ms": 66389.938
+  },
+  "candidate": {
+    "answered_samples": 10,
+    "avg_cost_per_query_usd": 0.007125,
+    "total_cost_usd": 0.071246,
+    "latency_sample_size": 10,
+    "latency_p50_ms": 55198.185,
+    "latency_p95_ms": 77591.256
+  },
+  "comparative": {
+    "avg_cost_delta_usd_baseline_minus_candidate": 0.001641,
+    "avg_cost_reduction_pct": 18.72,
+    "latency_p50_delta_ms_baseline_minus_candidate": -1516.415,
+    "latency_p95_delta_ms_baseline_minus_candidate": -11201.318,
+    "latency_regression_determinable": "yes",
+    "latency_regression_reason": "authoritative per-query latency telemetry exists for both lanes (n=10 each)"
+  },
+  "policy_usable_envelope": {
+    "cost_envelope_statement": "PASS: candidate average query cost is lower than baseline (0.007125 <= 0.008766 USD/query).",
+    "latency_envelope_statement": "FAIL: candidate latency regresses vs baseline (p50 +1516.415 ms; p95 +11201.318 ms).",
+    "overall_envelope_statement": "FAIL: candidate is cheaper but quality and latency regressions violate promotion envelope."
+  },
+  "limitations": [
+    "Latency evidence is authoritative for this 10-query slice only.",
+    "Use with small-sample caution; rerun on larger slice for production-grade SLO confidence."
+  ]
+}

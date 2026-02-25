@@ -1,0 +1,26 @@
+{
+  "task": "runtime-harness-fix",
+  "module": "arag",
+  "status": "ok",
+  "workspace": "/home/enes/.openclaw/workspace/agentic-ecosystem/arag-working",
+  "source": {
+    "repo": "https://github.com/Ayanami0730/arag",
+    "local_path": "/home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/arag-src",
+    "commit": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6"
+  },
+  "environment": {
+    "venv_path": "/home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/.venv",
+    "python": "python3",
+    "install_mode": "editable",
+    "install_command": "python -m pip install -e ./arag-src"
+  },
+  "verification": {
+    "command": "python3 -c \"import arag; print(arag.__file__)\"",
+    "output": "/home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/arag-src/src/arag/__init__.py",
+    "importable": true
+  },
+  "timestamps": {
+    "local": "2026-02-22T01:46:07-0500",
+    "utc": "2026-02-22T06:46:07Z"
+  }
+}

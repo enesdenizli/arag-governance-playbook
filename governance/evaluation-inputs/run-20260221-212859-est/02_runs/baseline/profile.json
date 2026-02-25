@@ -1,0 +1,18 @@
+{
+  "profile_id": "gpt-5-mini-control",
+  "model": "gpt-5-mini",
+  "embedding_profile": "Qwen3-Embedding-0.6B@/mnt/c/Users/enes-/AppData/Local/Qwen3-Embedding-0.6B",
+  "retrieval_config": {
+    "dataset": "MuSiQue",
+    "split": "dev",
+    "seed": 42,
+    "limit": 10,
+    "device": "cpu",
+    "api_mode": "real",
+    "status": "executed"
+  },
+  "rerank_config": {
+    "status": "not_configured"
+  },
+  "build_or_commit": "a44de6b2216bf6791979c4b6ac4ae106212fa1a6"
+}

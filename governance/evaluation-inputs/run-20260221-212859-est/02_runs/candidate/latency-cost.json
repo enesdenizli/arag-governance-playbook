@@ -1,0 +1,46 @@
+{
+  "run_id": "run-20260221-212859-est",
+  "lane": "candidate",
+  "p50_latency_ms": 28500.0,
+  "p95_latency_ms": 51700.0,
+  "avg_cost_per_query": 0.009735,
+  "envelope_compliant": true,
+  "measurement_status": "derived_from_telemetry_progress_completion_intervals_full_sample",
+  "latency_evidence": {
+    "source_log": "governance/evaluation-inputs/run-20260221-212859-est/comparison/gate/latency-rerun/candidate-workers1.log",
+    "sample_size_completed": 10,
+    "expected_total": 10,
+    "cumulative_completion_seconds": [
+      28,
+      69,
+      98,
+      156,
+      169,
+      181,
+      225,
+      238,
+      271,
+      294
+    ],
+    "completion_interval_seconds": [
+      28,
+      41,
+      29,
+      58,
+      13,
+      12,
+      44,
+      13,
+      33,
+      23
+    ],
+    "quantile_method": "numpy_percentile_linear_on_completion_intervals",
+    "notes": "Intervals reconstructed from tqdm completion snapshots in workers=1 rerun log."
+  },
+  "cost_evidence": {
+    "source_summary": "governance/evaluation-inputs/run-20260221-212859-est/candidate/predictions_eval_summary.json",
+    "answered_samples": 10,
+    "total_cost": 0.097349
+  },
+  "generated_at_utc": "2026-02-22T11:01:43Z"
+}

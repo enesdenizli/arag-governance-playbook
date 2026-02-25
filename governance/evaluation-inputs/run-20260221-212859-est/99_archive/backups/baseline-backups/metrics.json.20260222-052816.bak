@@ -1,0 +1,8 @@
+{
+  "precision_at_k": 0.0,
+  "citation_coverage": 0.0,
+  "grounded_answer_rate": 1.0,
+  "stale_context_rate": 0.0,
+  "contradiction_rate": 1.0,
+  "measurement_status": "measured_from_predictions_jsonl"
+}
