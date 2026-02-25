@@ -1,27 +1,0 @@
-/home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/exec/run-with-env.sh /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/.venv/bin/python /home/enes/.openclaw/workspace/agentic-ecosystem/arag-working/arag-src/scripts/eval.py --predictions /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/candidate/predictions.jsonl --workers 4 --output /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/candidate
-
-============================================================
-ARAG Evaluation
-============================================================
-Predictions: /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/candidate/predictions.jsonl
-Workers: 4
-============================================================
-
-Evaluating:   0%|          | 0/10 [00:00<?, ?sample/s]Evaluating:   0%|          | 0/10 [00:00<?, ?sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating:  10%|█         | 1/10 [00:00<00:00, 3618.90sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating:  20%|██        | 2/10 [00:00<00:00, 4531.93sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating:  30%|███       | 3/10 [00:00<00:00, 5137.98sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating:  40%|████      | 4/10 [00:00<00:00, 5549.86sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating:  50%|█████     | 5/10 [00:00<00:00, 5833.52sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating:  60%|██████    | 6/10 [00:00<00:00, 6004.73sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating:  70%|███████   | 7/10 [00:00<00:00, 5919.38sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating:  80%|████████  | 8/10 [00:00<00:00, 5991.86sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating:  90%|█████████ | 9/10 [00:00<00:00, 6105.25sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]Evaluating: 100%|██████████| 10/10 [00:00<00:00, 6139.20sample/s, Answered=0.0%, LLM_Acc=0.000, Contain=0.000]
-2026-02-22 04:03:14,933 - INFO - Evaluation Results:
-2026-02-22 04:03:14,933 - INFO -   Total Samples: 10
-2026-02-22 04:03:14,933 - INFO -   Answered: 0 (0.00%)
-2026-02-22 04:03:14,933 - INFO -   Failed: 10
-2026-02-22 04:03:14,933 - INFO -   LLM Accuracy: 0.0000
-2026-02-22 04:03:14,934 - INFO -   Contain Accuracy: 0.0000
-2026-02-22 04:03:14,934 - INFO -   Total Cost: $0.0000
-2026-02-22 04:03:14,934 - INFO -   Avg Loops: 0.00
-2026-02-22 04:03:14,935 - INFO - Summary saved to: /home/enes/.openclaw/workspace/agentic-ecosystem/governance/evaluation-inputs/run-20260221-212859-est/candidate/predictions_eval_summary.json
-
-============================================================
-Results
-============================================================
-LLM Accuracy: 0.0000
-Contain Accuracy: 0.0000
-============================================================
-

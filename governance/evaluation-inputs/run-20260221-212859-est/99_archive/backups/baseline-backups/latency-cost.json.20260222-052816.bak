@@ -1,7 +1,0 @@
-{
-  "p50_latency_ms": null,
-  "p95_latency_ms": null,
-  "avg_cost_per_query": 0.0,
-  "envelope_compliant": true,
-  "measurement_status": "measured_cost_only_latency_not_emitted_by_runner"
-}

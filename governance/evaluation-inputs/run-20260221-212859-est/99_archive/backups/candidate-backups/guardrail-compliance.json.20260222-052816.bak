@@ -1,6 +1,0 @@
-{
-  "hybrid_retrieval_compliant": true,
-  "citation_provenance_compliant": true,
-  "stale_context_demotion_compliant": true,
-  "policy_violations": []
-}
