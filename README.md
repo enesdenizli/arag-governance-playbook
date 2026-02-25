@@ -30,4 +30,17 @@ People interested in practical governance workflows for model selection:
 - `governance/evaluation-inputs/.../01_manifests`
 - `governance/evaluation-inputs/.../02_runs`
 - `governance/evaluation-inputs/.../03_governance`
-- `governance/evaluation-inputs/.../99_archive`
+
+## Citation
+If this repo helps your work, cite the upstream A-RAG paper:
+
+```bibtex
+@article{du2026arag,
+  title={A-RAG: Scaling Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces},
+  author={Du, Mingxuan and Xu, Benfeng and Zhu, Chiwei and Wang, Shaohan and Wang, Pengyu and Wang, Xiaorui and Mao, Zhendong},
+  journal={arXiv preprint arXiv:2602.03442},
+  year={2026}
+}
+```
+
+Machine-readable citation metadata is also available in `CITATION.cff`.

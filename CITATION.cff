@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If this workflow or repo helps your work, please cite the A-RAG paper and this repository."
+title: "Agentic Ecosystem — ARAG Model Selection Workflow"
+type: software
+authors:
+  - family-names: Denizli
+    given-names: Enes
+version: "0.1.0"
+date-released: "2026-02-24"
+url: "https://github.com/enesdenizli/agentic-ecosystem"
+repository-code: "https://github.com/enesdenizli/agentic-ecosystem"
+license: MIT
+preferred-citation:
+  type: article
+  title: "A-RAG: Scaling Agentic Retrieval-Augmented Generation via Hierarchical Retrieval Interfaces"
+  authors:
+    - family-names: Du
+      given-names: Mingxuan
+    - family-names: Xu
+      given-names: Benfeng
+    - family-names: Zhu
+      given-names: Chiwei
+    - family-names: Wang
+      given-names: Shaohan
+    - family-names: Wang
+      given-names: Pengyu
+    - family-names: Wang
+      given-names: Xiaorui
+    - family-names: Mao
+      given-names: Zhendong
+  year: 2026
+  identifiers:
+    - type: other
+      value: "arXiv:2602.03442"
+  url: "https://arxiv.org/abs/2602.03442"
