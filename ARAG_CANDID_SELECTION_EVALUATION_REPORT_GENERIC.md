@@ -17,7 +17,3 @@ When generating a sanitized share:
 2. Keep metrics and decision logic unchanged.
 3. Cite run-scoped evidence path generically as `governance/evaluation-inputs/<run-id>/`.
 4. Do not add claims not present in the canonical report.
-
-## Short share text
-A-RAG model selection result: baseline retained.
-Candidate cost was lower, but quality and latency regressed under frozen non-regression gates, so outcome is HOLD.
