@@ -6,10 +6,33 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Evaluation Artifacts](https://img.shields.io/badge/artifacts-versioned-blue)](./governance/evaluation-inputs/)
 [![Decision Status](https://img.shields.io/badge/decision-HOLD-orange)](./ARAG_CANDID_SELECTION_EVALUATION_REPORT.md)
+[![GitHub stars](https://img.shields.io/github/stars/enesdenizli/arag-governance-playbook?style=social)](https://github.com/enesdenizli/arag-governance-playbook/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/enesdenizli/arag-governance-playbook)](https://github.com/enesdenizli/arag-governance-playbook/issues)
+[![Last commit](https://img.shields.io/github/last-commit/enesdenizli/arag-governance-playbook)](https://github.com/enesdenizli/arag-governance-playbook/commits/main)
 
 </div>
 
 ---
+
+> [!TIP]
+> ## Start here
+> - Read the canonical verdict: [`ARAG_CANDID_SELECTION_EVALUATION_REPORT.md`](./ARAG_CANDID_SELECTION_EVALUATION_REPORT.md)
+> - Browse run artifacts: [`governance/evaluation-inputs/run-20260221-212859-est/`](./governance/evaluation-inputs/run-20260221-212859-est/)
+> - Use this as a template for your own baseline-vs-candidate promotion workflow
+
+## Table of Contents
+- [Why this repository exists](#why-this-repository-exists)
+- [Quick context: what is RAG, and why does governance matter?](#quick-context-what-is-rag-and-why-does-governance-matter)
+- [What this workflow is designed to do](#what-this-workflow-is-designed-to-do)
+- [Decision model (at a glance)](#decision-model-at-a-glance)
+- [Repository outcome in this published run](#repository-outcome-in-this-published-run)
+- [Terminology cheat sheet](#terminology-cheat-sheet)
+- [Why this workflow is useful beyond this repo](#why-this-workflow-is-useful-beyond-this-repo)
+- [Comparison: ad-hoc eval vs governed eval](#comparison-ad-hoc-eval-vs-governed-eval)
+- [Artifact structure (visual map)](#artifact-structure-visual-map)
+- [What this repository is (and is not)](#what-this-repository-is-and-is-not)
+- [Practical adoption guide](#practical-adoption-guide)
+- [Citation](#citation)
 
 ## Why this repository exists
 
@@ -80,6 +103,11 @@ flowchart TD
 - **Reason:** candidate improved cost but regressed on quality and latency under frozen non-regression gates.
 
 See canonical report: [`ARAG_CANDID_SELECTION_EVALUATION_REPORT.md`](./ARAG_CANDID_SELECTION_EVALUATION_REPORT.md)
+
+### In 3 minutes, understand this repo
+1. Open the final verdict report.
+2. Inspect `03_governance/comparison/decision-input.json` and `verdict.json`.
+3. Cross-check claims against `02_runs/baseline/` and `02_runs/candidate/` artifacts.
 
 ---
 
