@@ -135,13 +135,3 @@ The run-local fix log also records environment remediation and pinned source con
 ⛔ **Do not promote candidate (`openai-codex/gpt-5.3-codex`) in this run.**
 
 Reason, in one line: **candidate improved cost but regressed on both quality and latency under complete, admissible, frozen-criteria evaluation evidence.**
-
----
-
-## Social Share Version (Short)
-
-**A-RAG model selection result:** We kept the baseline.
-
-In this run, the candidate was cheaper (~18.7% lower avg cost) but underperformed on both quality (0.60 vs 0.70 LLM accuracy; 0.80 vs 0.90 contain accuracy) and latency (worse p50/p95). With frozen non-regression gates applied, final status is **HOLD** and baseline remains **`gpt-5-mini-control`**.
-
-**Takeaway:** cost wins don’t override quality + latency regressions in this governance framework.
